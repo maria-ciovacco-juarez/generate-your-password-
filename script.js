@@ -43,15 +43,19 @@ function getRandomSpecial() {
  //Asks user to input password length
  console.log("Asking password length!")
  person = prompt("Please select a password length between 8 to 128 characters.");
-  while (!(person>=0 && person<=128)) {
+  while (person<8 || person>128){
+    alert ("Incorrect. Please try again.")
     person = prompt("Please select a password length between 8 to 128 characters.");
-    if (askedAlready){
-      alert ("Incorrect. Please try again.")
-    }
-    else {
-      askedAlready = true
-    }
-  }
+ }
+//   while (!(person>=0 && person<=128)) {
+//     person = prompt("Please select a password length between 8 to 128 characters.");
+//     if (askedAlready){
+//       alert ("Incorrect. Please try again.")
+//     }
+//     else {
+//       askedAlready = true
+//     }
+  //}
 confirmLower = confirm ("Would you like to use lowercase letters? If so, click OK.")
 confirmUpper = confirm ("Would you like to use uppercase letters? If so, click OK.")
 confirmSpecial = confirm ("Would you like to include special characters? If so, click OK.");
@@ -61,6 +65,31 @@ console.log("confirmUpper: " + confirmUpper)
 console.log("confirmSpecial: " + confirmSpecial)
 console.log("confirmNumber: " + confirmNumber)
 //
+console.log(!confirmLower && !confirmUpper && !confirmNumber && !confirmSpecial)
+if (!confirmLower && !confirmUpper && !confirmNumber && !confirmSpecial) {
+    alert ("You must choose at least three of the criteria to generate password.")
+}
+console.log(!confirmLower && !confirmUpper && confirmNumber && confirmSpecial)
+if (!confirmLower && !confirmUpper && confirmNumber && confirmSpecial) {
+    alert ("You must choose at least three of the criteria to generate password.")
+}
+console.log(confirmLower && confirmUpper && !confirmNumber && !confirmSpecial)
+if (confirmLower && confirmUpper && !confirmNumber && !confirmSpecial) {
+    alert ("You must choose at least three of the criteria to generate password.")
+}
+console.log(!confirmLower && confirmUpper && !confirmNumber && confirmSpecial)
+if (!confirmLower && confirmUpper && !confirmNumber && confirmSpecial) {
+    alert ("You must choose at least three of the criteria to generate password.")
+}
+console.log(!confirmLower && confirmUpper && confirmNumber && !confirmSpecial)
+if (!confirmLower && confirmUpper && confirmNumber && !confirmSpecial) {
+    alert ("You must choose at least three of the criteria to generate password.")
+}
+console.log(confirmLower && !confirmUpper && !confirmNumber && confirmSpecial)
+if (!confirmLower && !confirmUpper && !confirmNumber && confirmSpecial) {
+    alert ("You must choose at least three of the criteria to generate password.")
+}
+console.log(confirmLower && confirmUpper && confirmNumber && confirmSpecial)
 if (confirmLower && confirmUpper && confirmNumber && confirmSpecial) {
   for (let i = 0; i<person; i++) {
     newCharacter=""
@@ -92,6 +121,69 @@ if (!confirmLower && confirmUpper && confirmNumber && confirmSpecial) {
     switch (x) {
       case 0:
         newCharacter=getRandomSpecial()
+        break;
+      case 1:
+        newCharacter=getRandomUpper()
+        break;
+      case 2:
+        newCharacter=getRandomInt(9)
+        break;
+      default:
+        break;
+    }
+    finalPassword+=newCharacter
+  }
+}
+console.log(confirmLower && !confirmUpper && confirmNumber && confirmSpecial)
+if (confirmLower && !confirmUpper && confirmNumber && confirmSpecial) {
+  for (let i = 0; i<person; i++) {
+    newCharacter=""
+    x=getRandomInt(3)
+    switch (x) {
+      case 0:
+        newCharacter=getRandomLower()
+        break;
+      case 1:
+        newCharacter=getRandomSpecial()
+        break;
+      case 2:
+        newCharacter=getRandomInt(9)
+        break;
+      default:
+        break;
+    }
+    finalPassword+=newCharacter
+  }
+}
+console.log(confirmLower && confirmUpper && !confirmNumber && confirmSpecial)
+if (confirmLower && confirmUpper && !confirmNumber && confirmSpecial) {
+  for (let i = 0; i<person; i++) {
+    newCharacter=""
+    x=getRandomInt(3)
+    switch (x) {
+      case 0:
+        newCharacter=getRandomSpecial()
+        break;
+      case 1:
+        newCharacter=getRandomUpper()
+        break;
+      case 2:
+        newCharacter=getRandomLower(9)
+        break;
+      default:
+        break;
+    }
+    finalPassword+=newCharacter
+  }
+}
+console.log(confirmLower && confirmUpper && confirmNumber && !confirmSpecial)
+if (confirmLower && confirmUpper && confirmNumber && !confirmSpecial) {
+  for (let i = 0; i<person; i++) {
+    newCharacter=""
+    x=getRandomInt(3)
+    switch (x) {
+      case 0:
+        newCharacter=getRandomLower()
         break;
       case 1:
         newCharacter=getRandomUpper()
