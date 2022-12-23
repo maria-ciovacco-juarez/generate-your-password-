@@ -8,7 +8,7 @@ This is the assignment for module 3 where you must JavaScript to create a random
 -Selecting a character length that is less than 8 or more than 128 alerts an error and loops to prompt the user to input a correct value again.
 
 #Getting Started
-This project has been deployed to GitHub Pages. To get this project up and running, you can follow the deployment link. Or, download the sources files to use this as a template.
+This project has been deployed to GitHub Pages. To get this project up and running, you can follow the deployment link. Or, download the sources files to use this as a template. link: https://mariaxisabelle.github.io/generate-your-password-/
 
 ##Installation
 -To install the generator you must clone this repository to your local device via Bit Bash or the terminal. 
