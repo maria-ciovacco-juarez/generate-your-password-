@@ -18,7 +18,8 @@ This project has been deployed to GitHub Pages. To get this project up and runni
 ##Usage
 -To use the generator, click "Generate Password" then follow the prompts.
 
-![generate password](assets/images/password prompt.jpg)
+(assets/images/password prompt.jpg)
+
 
 -If all the prompts are followed correctly, then a random password will generate at the end.
 
